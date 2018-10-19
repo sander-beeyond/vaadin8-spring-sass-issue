@@ -3,8 +3,9 @@
 An example Vaadin 8.5.2 project which contains an issue with the at runtime Sass compiler. 
 The project uses Spring 4.3.9, spring-boot 1.4.7 and Spring-boot-starter 3.0.0.
 Because Spring is used and the application is packaged as a jar the webapp folder can no longer be used.
-The contents of the VAADIN folder have been moved to the resources directory but this causes an issue with the Sass runtime compiler.
+The contents of the VAADIN folder have been moved to the resources directory but this causes an issue with the Sass runtime compiler. The at runtime compiler no longer functions and for any new theme changes to show up the application has to be restarted or a new mvn clean install has to be executed.
 When the webapp folder is put back in place the runtime compiler functions as intended when refreshing a page. 
+This is not an issue when deploying the application since the style.css is correctly generated in the resources directory during a Maven install by the vaadin-maven-plugin.
 
 On the fly compilation does not work when:
 * /main/resources/VAADIN/themes/apptheme/styles.css is present
